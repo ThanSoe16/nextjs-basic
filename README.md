@@ -17,3 +17,11 @@ bun dev
 Next, change tsconfig.json for absolute paths
 
 @/\* like that
+
+If u want to skip eslint in production
+
+Open next.config.js and enable the ignoreDuringBuilds option in the eslint config:
+
+eslint: {
+ignoreDuringBuilds: true,
+},
