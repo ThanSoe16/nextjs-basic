@@ -22,6 +22,6 @@ If u want to skip eslint in production
 
 Open next.config.js and enable the ignoreDuringBuilds option in the eslint config:
 
-eslint: {
-ignoreDuringBuilds: true,
-},
+```bash
+eslint: {ignoreDuringBuilds: true}
+```
