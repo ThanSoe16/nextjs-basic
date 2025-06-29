@@ -30,3 +30,17 @@ bun dev
     }
   }
   ```
+
+  ## 🚫 Skipping ESLint in Production Builds
+
+By default, Next.js runs ESLint during production builds (`next build`).  
+To **skip ESLint checks in production**, you can configure `next.config.js` like this:
+
+```js
+// next.config.js
+module.exports = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};
+```
