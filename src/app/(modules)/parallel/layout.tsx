@@ -7,11 +7,11 @@ export default function Layout({
   analytics: React.ReactNode;
   team: React.ReactNode;
 }) {
+  const role = "user";
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-2">
       {children}
-      {team}
-      {analytics}
+      {role === "user" ? team : analytics}
     </div>
   );
 }
