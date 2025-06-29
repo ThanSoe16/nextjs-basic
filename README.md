@@ -14,14 +14,19 @@ pnpm dev
 bun dev
 ```
 
-Next, change tsconfig.json for absolute paths
+## 🛠 Configuration Tips
 
-@/\* like that
+- **Enable absolute imports** by updating `tsconfig.json`:
 
-If u want to skip eslint in production
+  > This allows you to use paths like `@/components/...` instead of relative paths like `../../components`.
 
-Open next.config.js and enable the ignoreDuringBuilds option in the eslint config:
-
-```bash
-eslint: {ignoreDuringBuilds: true}
-```
+  ```json
+  {
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"]
+      }
+    }
+  }
+  ```
