@@ -1,7 +1,6 @@
 // app/dashboard/layout.tsx
 
 import React from "react";
-import BuggyComponent from "@/components/buggy";
 import MainErrorBoundary from "@/components/error-boundary";
 
 export default function DashboardLayout({
@@ -21,7 +20,7 @@ export default function DashboardLayout({
         {/* Main content wrapped in error boundary */}
         <MainErrorBoundary>
           <main className="flex-1 overflow-auto p-4">
-            <BuggyComponent />
+            {/* <BuggyComponent /> */}
             {children}
           </main>
         </MainErrorBoundary>
