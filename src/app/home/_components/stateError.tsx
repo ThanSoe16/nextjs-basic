@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 
 function ProblematicComponent({ error }: { error: Error }) {
   throw error; // ❗ This will trigger the error boundary
@@ -8,10 +8,13 @@ function ProblematicComponent({ error }: { error: Error }) {
 }
 
 export function StateError() {
+  const [pending, startTransition] = useTransition();
   const [error, setError] = useState<Error | null>(null);
 
   const handleClick = () => {
-    setError(new Error("This is a render-time error"));
+    startTransition(() => {
+      setError(new Error("This is a render-time error"));
+    });
   };
 
   if (error) {
@@ -19,7 +22,7 @@ export function StateError() {
   }
 
   return (
-    <button type="button" onClick={handleClick}>
+    <button type="button" onClick={handleClick} disabled={pending}>
       Throw Error
     </button>
   );
