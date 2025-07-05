@@ -27,7 +27,7 @@ export default class MainErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <main className="flex-1 overflow-auto p-4 bg-red-100 text-red-800">
+        <main className="flex-1 overflow-auto p-4 bg-red-100 text-red-800 w-full h-full">
           <h2>Something went wrong.</h2>
           <pre>{this.state.error?.message}</pre>
           <button

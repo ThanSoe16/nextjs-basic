@@ -21,7 +21,7 @@ export default function DashboardLayout({
         {/* Main content wrapped in error boundary */}
         <MainErrorBoundary>
           <main className="flex-1 overflow-auto p-4">
-            <BuggyComponent />
+            {/* <BuggyComponent /> */}
             {children}
           </main>
         </MainErrorBoundary>
