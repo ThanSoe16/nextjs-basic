@@ -5,6 +5,16 @@ const nextConfig: NextConfig = {
   sassOptions: {
     additionalData: `$var: red;`,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "github.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
